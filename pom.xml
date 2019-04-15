@@ -15,8 +15,8 @@
     <java.version>1.8</java.version>
 
     <!-- SPRING & HIBERNATE / JPA -->
-    <spring.version>4.3.0.RELEASE</spring.version>
-    <hibernate.version>4.1.9.Final</hibernate.version>
+    <spring.version>4.3.3.RELEASE</spring.version>
+    <hibernate.version>5.4.1.Final</hibernate.version>
 
     <lombok.version>1.18.4</lombok.version>
 
@@ -63,11 +63,25 @@
       <scope>runtime</scope>
     </dependency>
 
-    <dependency>
-      <groupId>javax.validation</groupId>
-      <artifactId>validation-api</artifactId>
-      <version>1.0.0.GA</version>
-    </dependency>
+    <!--<dependency>-->
+    <!--<groupId>javax.validation</groupId>-->
+    <!--<artifactId>validation-api</artifactId>-->
+    <!--<version>1.0.0.GA</version>-->
+    <!--</dependency>-->
+
+<!--    &lt;!&ndash; Pdf library &ndash;&gt;-->
+<!--    <dependency>-->
+<!--      <groupId>com.lowagie</groupId>-->
+<!--      <artifactId>itext</artifactId>-->
+<!--      <version>2.1.7</version>-->
+<!--    </dependency>-->
+
+<!--    &lt;!&ndash; Needed for IText PDF View &ndash;&gt;-->
+<!--    <dependency>-->
+<!--      <groupId>com.itextpdf</groupId>-->
+<!--      <artifactId>itextpdf</artifactId>-->
+<!--      <version>5.5.13</version>-->
+<!--    </dependency>-->
 
     <!-- Hibernate -->
 
@@ -76,23 +90,26 @@
       <artifactId>hibernate-core</artifactId>
       <version>${hibernate.version}</version>
     </dependency>
+
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-validator</artifactId>
-      <version>4.2.0.Final</version>
-    </dependency>
-    <dependency>
-      <groupId>org.hibernate.common</groupId>
-      <artifactId>hibernate-commons-annotations</artifactId>
-      <version>4.0.1.Final</version>
-      <classifier>tests</classifier>
+      <version>${hibernate.version}</version>
     </dependency>
 
-    <dependency>
-      <groupId>org.hibernate.javax.persistence</groupId>
-      <artifactId>hibernate-jpa-2.0-api</artifactId>
-      <version>1.0.1.Final</version>
-    </dependency>
+    <!--<dependency>-->
+    <!--<groupId>org.hibernate.common</groupId>-->
+    <!--<artifactId>hibernate-commons-annotations</artifactId>-->
+    <!--<version>${hibernate.version}</version>-->
+    <!--<classifier>tests</classifier>-->
+    <!--</dependency>-->
+
+    <!--<dependency>-->
+    <!--<groupId>org.hibernate.javax.persistence</groupId>-->
+    <!--<artifactId>hibernate-jpa-2.0-api</artifactId>-->
+    <!--<version>1.0.1.Final</version>-->
+    <!--</dependency>-->
+
     <dependency>
       <groupId>org.hibernate</groupId>
       <artifactId>hibernate-entitymanager</artifactId>
@@ -102,7 +119,7 @@
     <dependency>
       <groupId>javax.validation</groupId>
       <artifactId>validation-api</artifactId>
-      <version>1.0.0.GA</version>
+      <version>2.0.1.Final</version>
     </dependency>
 
     <!-- PostgreSQL Driver -->
@@ -118,6 +135,46 @@
       <version>${lombok.version}</version>
       <scope>provided</scope>
     </dependency>
+
+    <dependency>
+      <groupId>org.hibernate</groupId>
+      <artifactId>hibernate-java8</artifactId>
+      <version>${hibernate.version}</version>
+    </dependency>
+
+    <!-- https://mvnrepository.com/artifact/org.apache.commons/commons-lang3 -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+      <version>3.0</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-fileupload</groupId>
+      <artifactId>commons-fileupload</artifactId>
+      <version>1.2</version>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>1.4</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.webjars</groupId>
+      <artifactId>jspdf</artifactId>
+      <version>1.4.1</version>
+    </dependency>
+
+    <dependency>
+      <groupId>com.fasterxml.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>2.5.3</version>
+    </dependency>
+
+
+
 
   </dependencies>
 
