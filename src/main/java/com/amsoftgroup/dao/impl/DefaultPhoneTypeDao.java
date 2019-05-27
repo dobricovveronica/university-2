@@ -20,7 +20,7 @@ public class DefaultPhoneTypeDao implements PhonTypeDao {
 
     @Override
     public List<PhoneType> findAll() {
-        return entityManager.createQuery("SELECT Pt from PhoneType Pt").getResultList();
+        return entityManager.createQuery("SELECT P from PhoneType P").getResultList();
     }
 
     @Override

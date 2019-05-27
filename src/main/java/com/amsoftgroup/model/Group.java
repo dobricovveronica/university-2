@@ -21,7 +21,8 @@ public class Group {
     @Column(name = "name")
     private String name;
 
-//    @OneToMany(mappedBy = "group_id")
+//    @OneToMany(mappedBy = "group", cascade = CascadeType.ALL)
 //    private Set<Student> students;
+
     public Group(){}
 }

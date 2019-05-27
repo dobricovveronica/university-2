@@ -23,11 +23,13 @@ public class Discipline {
     @Column(name = "title")
     private String title;
 
-    @Column(name = "teacher_id")
-    private long teacherId;
+    @OneToOne
+    @JoinColumn(name = "teacher_id")
+    private Teacher teacher;
 
-    @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
     @JoinTable(name = "university.disciplines_to_students", joinColumns = {@JoinColumn(name = "discipline_id", referencedColumnName = "id")},
             inverseJoinColumns = {@JoinColumn(name = "student_id", referencedColumnName = "id")})
     private Set<Student> students = new HashSet<>();
+
 }

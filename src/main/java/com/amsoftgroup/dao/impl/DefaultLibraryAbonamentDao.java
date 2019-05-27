@@ -26,12 +26,24 @@ public class DefaultLibraryAbonamentDao implements LibraryAbonamentDao {
     }
 
     @Override
-    public void add(LibraryAbonament libraryAbonament) {
+    public LibraryAbonament add(LibraryAbonament libraryAbonament) {
         entityManager.persist(libraryAbonament);
+        return libraryAbonament;
     }
 
     @Override
     public void update(LibraryAbonament libraryAbonament) {
-        entityManager.refresh(libraryAbonament);
+        entityManager.merge(libraryAbonament);
+    }
+
+    @Override
+    public LibraryAbonament findLibraryAbonamentById(Long id){
+        LibraryAbonament libraryAbonament = (LibraryAbonament) entityManager.find(LibraryAbonament.class, id);
+        return libraryAbonament;
+    }
+
+    @Override
+    public List<String> findDistinctAll() {
+        return entityManager.createQuery("SELECT DISTINCT L.status from LibraryAbonament L ").getResultList();
     }
 }

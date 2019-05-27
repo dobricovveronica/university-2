@@ -24,6 +24,11 @@ public class DefaultDisciplineDao implements DisciplineDao {
     }
 
     @Override
+    public List<Discipline> findDisciplinesByStudentId(Long studentId) {
+        return entityManager.createQuery("SELECT D from Discipline D where D.students.id = :id").setParameter("id", studentId).getResultList();
+    }
+
+    @Override
     public void add(Discipline discipline) {
         entityManager.persist(discipline);
     }

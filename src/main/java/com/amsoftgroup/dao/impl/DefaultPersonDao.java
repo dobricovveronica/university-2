@@ -32,6 +32,6 @@ public class DefaultPersonDao implements PersonDao {
 
   @Override
   public void update(Person person) {
-    entityManager.refresh(person);
+    entityManager.merge(person);
   }
 }

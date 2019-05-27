@@ -5,6 +5,9 @@ import javax.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.ArrayList;
+import java.util.List;
+
 
 @Getter
 @Setter
@@ -15,4 +18,6 @@ public class Teacher extends Person{
 
     @Column(name = "salary")
     private Double salary;
+
+
 }

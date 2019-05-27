@@ -12,5 +12,4 @@ public interface GroupDao {
 
     void update(Group group);
 
-
 }

@@ -17,12 +17,13 @@ public class Average {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @OneToOne
+    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinTable(name = "university.students", joinColumns = {@JoinColumn(name = "id", referencedColumnName = "student_id")})
     @JoinColumn(name = "student_id")
     private Student student;
 
-    @OneToOne
-    @JoinColumn(name = "discipline_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+//    @JoinColumn(name = "discipline_id")
     private Discipline discipline;
 
     @Column(name = "value")

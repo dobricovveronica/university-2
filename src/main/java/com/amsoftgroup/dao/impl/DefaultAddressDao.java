@@ -31,6 +31,6 @@ public class DefaultAddressDao implements AddressDao {
 
     @Override
     public void update(Address address) {
-        entityManager.refresh(address);
+        entityManager.merge(address);
     }
 }

@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
 
@@ -18,21 +19,22 @@ public class Mark {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "student_id")
     private Student student;
 
-    @OneToOne
+    @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "discipline_id")
     private Discipline discipline;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "teacher_id")
     private Teacher teacher;
 
     @Column(name = "value")
     private Double value;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     @Column(name = "create_data")
     private LocalDate createData;
 }

@@ -32,4 +32,6 @@ public class DefaultAverageDao implements AverageDao {
     public void update(Average average) {
         entityManager.refresh(average);
     }
+
+
 }

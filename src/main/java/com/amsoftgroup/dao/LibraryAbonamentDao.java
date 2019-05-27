@@ -8,9 +8,11 @@ public interface LibraryAbonamentDao {
 
     List<LibraryAbonament> findAll();
 
-    void add(LibraryAbonament libraryAbonament);
+    LibraryAbonament add(LibraryAbonament libraryAbonament);
 
     void update(LibraryAbonament libraryAbonament);
 
+    LibraryAbonament findLibraryAbonamentById(Long id);
 
+    List<String> findDistinctAll();
 }

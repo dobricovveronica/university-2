@@ -12,5 +12,9 @@ public interface StudentDao {
 
     void update(Student student);
 
+    Student findStudentByIdSetDiscipline(Long id);
 
+    Student findStudentByIdSetPhone(Long id);
+
+    void delete(Long studentId);
 }
