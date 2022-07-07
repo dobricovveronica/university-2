@@ -16,7 +16,7 @@
 
         <!-- SPRING & HIBERNATE / JPA -->
         <spring.version>4.3.3.RELEASE</spring.version>
-        <hibernate.version>5.4.1.Final</hibernate.version>
+        <hibernate.version>6.0.23.Final</hibernate.version>
 
         <lombok.version>1.18.4</lombok.version>
 
@@ -121,7 +121,7 @@
         <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
-            <version>5.1.0.Final</version>
+            <version>6.0.23.Final</version>
         </dependency>
 
         <dependency>
